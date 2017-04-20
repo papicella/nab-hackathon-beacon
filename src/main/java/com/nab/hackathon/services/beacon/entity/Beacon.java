@@ -6,54 +6,63 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Beacon
-{
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Long beaconId;
+public class Beacon {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long beaconId;
 
-    private String beaconName;
-    private Long merchantId;
+  private String name;
+  private Long merchantId;
+  private String type;
 
-    public Beacon()
-    {
-    }
+  public Beacon() {
+  }
 
-    public Beacon(String beaconName, Long merchantId) {
-        this.beaconName = beaconName;
-        this.merchantId = merchantId;
-    }
+  public Beacon(String name, Long merchantId, String type) {
+    this.name = name;
+    this.merchantId = merchantId;
+    this.type = type;
+  }
 
-    public Long getBeaconId() {
-        return beaconId;
-    }
+  public Long getBeaconId() {
+    return beaconId;
+  }
 
-    public void setBeaconId(Long beaconId) {
-        this.beaconId = beaconId;
-    }
+  public void setBeaconId(Long beaconId) {
+    this.beaconId = beaconId;
+  }
 
-    public String getBeaconName() {
-        return beaconName;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setBeaconName(String beaconName) {
-        this.beaconName = beaconName;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public Long getMerchantId() {
-        return merchantId;
-    }
+  public Long getMerchantId() {
+    return merchantId;
+  }
 
-    public void setMerchantId(Long merchantId) {
-        this.merchantId = merchantId;
-    }
+  public void setMerchantId(Long merchantId) {
+    this.merchantId = merchantId;
+  }
 
-    @Override
-    public String toString() {
-        return "Beacon{" +
-                "beaconId=" + beaconId +
-                ", beaconName='" + beaconName + '\'' +
-                ", merchantId=" + merchantId +
-                '}';
-    }
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  @Override
+  public String toString() {
+    return "Beacon{" +
+        "beaconId=" + beaconId +
+        ", name='" + name + '\'' +
+        ", merchantId=" + merchantId +
+        ", type='" + type + '\'' +
+        '}';
+  }
 }

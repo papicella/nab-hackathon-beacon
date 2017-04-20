@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Created by pasapicella on 4/20/17.
  */
-public interface BeaconRepository extends JpaRepository <Beacon, Long> {
-
+public interface BeaconRepository extends JpaRepository <Beacon, Long>
+{
+    Beacon findByMerchantId(Long merchantId);
 }
