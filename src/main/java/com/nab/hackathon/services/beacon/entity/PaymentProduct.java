@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class PaymentProduct {
 
   @Embeddable
-  class PaymentProductId implements Serializable {
+  public static class PaymentProductId implements Serializable {
     private Long paymentId;
     private Long productId;
 
