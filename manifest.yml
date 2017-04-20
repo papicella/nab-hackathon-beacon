@@ -1,0 +1,11 @@
+applications:
+- name: nabhackathon-beacon
+  memory: 756M
+  instances: 1
+  hostname: nabhackathon-beacon
+  path: ./target/nab-hackathon-beacon-0.0.1-SNAPSHOT.jar
+  services:
+    - nab-mysql
+  env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urando
+    SPRING_PROFILES_ACTIVE: cloud
