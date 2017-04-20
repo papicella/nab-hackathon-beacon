@@ -71,4 +71,4 @@ with body:
 ```DELETE custreg/deletecustreg/beaconId/customerId```
 
 <hr />
-Pas Apicella [papicella at pivotal.io] is a Senior Platform Architect at Pivotal Australia 
+Pas Apicella [papicella at pivotal.io] is a Senior Platform Architect at Pivotal Australia!!
