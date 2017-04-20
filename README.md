@@ -1,51 +1,40 @@
-** BEACON API **
+# HACKATHON SERVICE ENGINE API'S
 
-Create Beacon ->
+## BEACON API
 
-$ curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST http://localhost:8080/beacon/newbeacon -d @new-beacon.json
-{"beaconId":1,"name":"Beacon1","merchantId":1,"type":"proximity"}
+Pivotal Cloud Foundry End point as follows FOR BEACON API
 
-new-beacon.json as follows:
+```
+http://nabhackathon-beacon.cfapps.io
+```
 
+- Create Beacon 
+
+```POST /beacon/newbeacon```
+
+with body:
+
+```
 {
     "name": "Beacon1",
     "merchantId": 1,
     "type": "proximity"
 }
+```
 
-List all Beacons ->
+- List all Beacons 
 
-$ curl http://localhost:8080/beacon/all | jq -r
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100    67    0    67    0     0   5937      0 --:--:-- --:--:-- --:--:--  6090
-[
-  {
-    "beaconId": 1,
-    "name": "Beacon1",
-    "merchantId": 1,
-    "type": "proximity"
-  }
-]
+```GET /beacon/all```
 
-Find my merchant id ->
+- Find my merchantId
 
-$ curl http://localhost:8080/beacon/merchant/1 | jq -r
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100    65    0    65    0     0   3101      0 --:--:-- --:--:-- --:--:--  3250
-{
-  "beaconId": 1,
-  "name": "Beacon1",
-  "merchantId": 1,
-  "type": "proximity"
-}
+```GET /beacon/merchant/merchantId```
 
-Delete beacon by ID ->
+- Delete beacon by beaconId
 
-$ curl -X DELETE http://localhost:8080/beacon/deletebeacon/1
+```DELETE beacon/deletebeacon/beaconId```
 
-** CUSTOMERREGISTRATION API **
+# CUSTOMER REGISTRATION API 
 
 Create Customer Registration ->
 
