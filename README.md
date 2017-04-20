@@ -34,15 +34,21 @@ with body:
 
 ```DELETE beacon/deletebeacon/beaconId```
 
-# CUSTOMER REGISTRATION API 
+## CUSTOMER REGISTRATION API
 
-Create Customer Registration ->
+Pivotal Cloud Foundry End point as follows FOR CUSTOMER REGISTRATION API
 
-$ curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST http://localhost:8080/custreg/newcustreg -d @new-custreg.json
-{"customerRegistrationId":{"beaconId":1,"customerId":1},"checkIn":1335205543511,"checkOut":1335205543511}
+```
+http://nabhackathon-beacon.cfapps.io
+```
 
-new-custreg.json as follows:
+- Create Customer Registration
 
+```POST /custreg/newcustreg ```
+
+with body: 
+
+```
 {
     "customerRegistrationId":
        {"beaconId": 1,
@@ -50,42 +56,19 @@ new-custreg.json as follows:
     "checkIn": "2012-04-23T18:25:43.511Z",
     "checkOut": "2012-04-23T18:25:43.511Z"
 }
+```
 
-View All Customer Registrations:
+- View All Customer Registrations
 
-$ curl http://localhost:8080/custreg/all | jq -r
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   107    0   107    0     0   4566      0 --:--:-- --:--:-- --:--:--  4652
-[
-  {
-    "customerRegistrationId": {
-      "beaconId": 1,
-      "customerId": 1
-    },
-    "checkIn": 1335205544000,
-    "checkOut": 1335205544000
-  }
-]
+```GET /custreg/all ```
 
-View customer registrations by customerId ->
+- View customer registrations by customerId 
 
-$ curl http://localhost:8080/custreg/allregbycustomer/1 | jq -r
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   107    0   107    0     0   6261      0 --:--:-- --:--:-- --:--:--  6687
-[
-  {
-    "customerRegistrationId": {
-      "beaconId": 1,
-      "customerId": 1
-    },
-    "checkIn": 1335205544000,
-    "checkOut": 1335205544000
-  }
-]
+```GET /custreg/allregbycustomer/customerId ```
 
-Delete customer registration using beaconId and customerId in that order ->
+- Delete customer registration using beaconId and customerId 
 
-$ curl -X DELETE http://localhost:8080/custreg/deletecustreg/1/1
+```DELETE custreg/deletecustreg/beaconId/customerId```
 
+<hr />
+Pas Apicella [papicella at pivotal.io] is a Senior Platform Architect at Pivotal Australia 
