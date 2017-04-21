@@ -1,5 +1,7 @@
 package com.nab.hackathon.services.beacon.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -67,9 +69,11 @@ public class CustomerRegistration {
   @EmbeddedId
   private CustomerRegistrationId customerRegistrationId;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern ="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
   @Temporal(TemporalType.TIMESTAMP)
   private Date checkIn;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern ="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
   @Temporal(TemporalType.TIMESTAMP)
   private Date checkOut;
 

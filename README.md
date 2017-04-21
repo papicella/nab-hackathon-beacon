@@ -73,7 +73,7 @@ with body:
 
 - Delete customer registration using beaconId and customerId 
 
-```DELETE custreg/deletecustreg/beaconId/customerId```
+```DELETE /custreg/deletecustreg/beaconId/customerId```
 
 <hr />
 Pas Apicella [papicella at pivotal.io] is a Senior Platform Architect at Pivotal Australia!!
