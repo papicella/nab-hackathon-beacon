@@ -30,6 +30,15 @@ public class BeaconRest
         return beaconRepository.findAll();
     }
 
+    @RequestMapping(value = "/get/{beaconId}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Beacon getBeacon(@PathVariable String beaconId)
+    {
+        logger.info("Invoking /beacon/get/{beaconId} RESTful method");
+        return beaconRepository.findOne(beaconId);
+    }
+
     @RequestMapping(value = "/merchant/{merchantId}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -50,7 +59,7 @@ public class BeaconRest
 
     @RequestMapping(value = "/deletebeacon/{beaconId}", method=RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable Long beaconId)
+    public void delete(@PathVariable String beaconId)
     {
         logger.info("Invoking /beacon/deletebeacon/{beaconId} RESTful method");
         Beacon beacon = beaconRepository.findOne(beaconId);

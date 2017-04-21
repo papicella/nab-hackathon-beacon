@@ -37,7 +37,7 @@ public class CustomerRegistrationRest
     }
 
     @RequestMapping(value = "/deletecustreg/{beaconId}/{customerId}", method=RequestMethod.DELETE)
-    public void delete(@PathVariable Long beaconId,
+    public void delete(@PathVariable String beaconId,
                        @PathVariable Long customerId)
     {
         logger.info("Invoking /custreg/deletecustreg/{beaconId}/{customerId} RESTful method");

@@ -34,6 +34,10 @@ with body:
 
 ```DELETE beacon/deletebeacon/beaconId```
 
+- Get single beacon by beaconId
+
+```GET /beacon/get/{beaconId}```
+
 ## CUSTOMER REGISTRATION API
 
 Pivotal Cloud Foundry End point as follows FOR CUSTOMER REGISTRATION API

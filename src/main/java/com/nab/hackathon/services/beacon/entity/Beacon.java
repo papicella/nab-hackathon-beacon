@@ -1,15 +1,12 @@
 package com.nab.hackathon.services.beacon.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Beacon {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long beaconId;
+  private String beaconId;
 
   private String name;
   private Long merchantId;
@@ -24,11 +21,11 @@ public class Beacon {
     this.type = type;
   }
 
-  public Long getBeaconId() {
+  public String getBeaconId() {
     return beaconId;
   }
 
-  public void setBeaconId(Long beaconId) {
+  public void setBeaconId(String beaconId) {
     this.beaconId = beaconId;
   }
 
