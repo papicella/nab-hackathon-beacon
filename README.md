@@ -16,6 +16,7 @@ with body:
 
 ```
 {
+    "beaconId": "beacon-01-01",
     "name": "Beacon1",
     "merchantId": 1,
     "type": "proximity"
